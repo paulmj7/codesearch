@@ -16,7 +16,7 @@ class RepoSearch extends Component {
     this.handleLookup = this.handleLookup.bind(this)
   }
   handleSubmit(event) {
-    fetch("http://localhost:5000", {
+    fetch("http://localhost:5000/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -19,7 +19,8 @@ func main() {
 	types[".rs"] = true
 	types[".java"] = true
 	port := ":5000"
-	http.HandleFunc("/", index)
+	http.Handle("/", http.FileServer(http.Dir("../build/")))
+	http.HandleFunc("/api", index)
 	fmt.Println("Listening on " + port)
 	log.Fatal(http.ListenAndServe(port, nil))
 }
